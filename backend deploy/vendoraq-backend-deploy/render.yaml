@@ -1,0 +1,8 @@
+
+services:
+  - type: web
+    name: vendoraq-backend
+    env: python
+    buildCommand: ""
+    startCommand: "python app.py"
+    autoDeploy: true
