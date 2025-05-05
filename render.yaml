@@ -2,5 +2,6 @@ services:
   - type: web
     name: vendoraq-backend
     env: python
-    buildCommand: ""
-    startCommand: "python app.py"
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
