@@ -2,27 +2,27 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)  # Allow frontend requests
+CORS(app)
 
-@app.route("/")
+@app.route('/')
 def home():
-    return "VendorAIQ Backend is Running."
+    return 'VendorAIQ Backend is live!'
 
-@app.route("/analyze", methods=["POST"])
+@app.route('/analyze', methods=['POST'])
 def analyze():
     data = request.get_json()
-    asin = data.get("asin")
+    asin = data.get('asin')
 
-    # Simulated example result – replace this with real logic later
+    # Simulated response (replace with real logic when ready)
     return jsonify({
         "title": "Sample Product Title",
         "asin": asin,
-        "roi": 35.6,
-        "buy_box": 23.99,
-        "est_sales": 140,
+        "roi": 85,
+        "buy_box": 27.99,
+        "est_sales": 150,
         "supplier_name": "Seoul4PM",
-        "image": "https://via.placeholder.com/200"
+        "image": "https://via.placeholder.com/150"
     })
 
-if __name__ == "__main__":
-    app.run()
+if __name__ == '__main__':
+    app.run(debug=True)
