@@ -13,7 +13,6 @@ def analyze():
     data = request.get_json()
     asin = data.get('asin')
 
-    # Simulated response (replace with real logic when ready)
     return jsonify({
         "title": "Sample Product Title",
         "asin": asin,
